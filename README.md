@@ -1,24 +1,59 @@
-# 🌐👋 - Hello World  
+[![Build Status](https://travis-ci.org/jilow/root-nodejs.svg?branch=master)](https://travis-ci.org/jilow/root-nodejs)
 
-Root is a company built by developers for developers. Open Source Software is part of our culture. We open-source as much of our codebase as we can.
+# root-nodejs
 
-Our SDKs are community maintained. (because we’re not experts in go, or lolcode, or ruby, or swift or rust or any of the plethora of wonderful languages living out in the wild).
+Node.js client library for using Root API. The full api documentation can be found [here](https://app.root.co.za/docs/insurance/api).
 
-This repo for the Node Insurance SDK is currently just a placeholder, but you can change that.
+*This is not part of the official Root SDK.*
 
-For help and support, please reach out to us on the Root Club Slack.
+## Usage
 
-## Contributing
-If you wish to contribute to this repository, please fork it and send a PR our way.
+Install the package:
+```bash
+# using NPM
+npm i jilow/root-nodejs
 
-## Publishing
+# using yarn
+yarn add jilow/root-nodejs
+```
 
-There are a few things to do if you want to publish this repository as an official Root package:
+In your code:
+```javascript
+// ES modules
+import * as Root from 'root-nodejs'
+// CommonJS 
+const Root = require('root-nodejs')
 
-- [ ] Please ensure a Root Team member is able to publish a fix to the package should you be unavailable
-- [ ] Write a short explanation on how to to publish in this README, or alternatively, set up a CI build which can automatically build and publish the package. 
+const client = new Root.InsuranceAPI(APP_ID, APP_TOKEN)
 
-## Code of Conduct
-Root’s developers and our community are expected to abide by the [Contributor Covenant Code of Conduct](https://github.com/root-community/root-insurance-go/tree/master/CODE_OF_CONDUCT.md). Play nice.
+const gadgetModels = await client.listGadgetModels()
+```
 
 
+See the [wiki](https://github.com/jilow/root-nodejs/wiki) for further usage examples.
+
+## Development
+
+Want to contribute?
+
+Install all the development dependencies:
+```bash
+# using NPM
+npm install -d
+
+# using yarn
+yarn install -D
+``` 
+
+Edit some files and then run the tests:
+```
+# using NPM
+npm test
+
+# using yarn
+yarn test
+```
+
+## License
+
+This library is licensed under MIT.
