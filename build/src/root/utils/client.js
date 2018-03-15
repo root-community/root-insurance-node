@@ -13,9 +13,8 @@ const auth_error_1 = require("../errors/auth_error");
 const input_error_1 = require("../errors/input_error");
 const ENV = process.env.NODE_ENV;
 class Client {
-    constructor(appId, appSecret, env = 'sandbox') {
-        this.appId = appId;
-        this.appSecret = appSecret;
+    constructor(apiKey, env = 'sandbox') {
+        this.apiKey = apiKey;
         this.env = env;
     }
     post(entity, data) {
@@ -40,8 +39,7 @@ class Client {
     }
     get apiAuth() {
         return {
-            username: this.appId,
-            password: this.appSecret,
+            username: this.apiKey,
         };
     }
     get apiType() {
