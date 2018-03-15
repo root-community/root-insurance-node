@@ -6,13 +6,11 @@ const ENV = process.env.NODE_ENV
 
 export default class Client {
 
-  public appId: string
-  public appSecret: string
+  public apiKey: string
   public env: string
 
-  constructor(appId: string, appSecret: string, env: string = 'sandbox') {
-    this.appId = appId
-    this.appSecret = appSecret
+  constructor(apiKey: string, env: string = 'sandbox') {
+    this.apiKey = apiKey
     this.env = env
   }
 
@@ -34,8 +32,8 @@ export default class Client {
 
   get apiAuth() {
     return {
-      username: this.appId,
-      password: this.appSecret,
+        username: this.apiKey,
+        password: ''
     }
   }
 

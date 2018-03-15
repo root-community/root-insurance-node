@@ -40,6 +40,7 @@ class Client {
     get apiAuth() {
         return {
             username: this.apiKey,
+            password: ''
         };
     }
     get apiType() {
