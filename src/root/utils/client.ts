@@ -54,10 +54,6 @@ export default class Client {
   }
 
   private async makeRequest(method: string, entity: string, data: object) {
-
-    console.log('options!');
-    console.log(this.generateOptions(method, entity, data))
-
     try {
       const response = await axios.request(this.generateOptions(method, entity, data))
       return this.parseResponse(response)
