@@ -57,6 +57,8 @@ class Client {
     }
     makeRequest(method, entity, data) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log('options!');
+            console.log(this.generateOptions(method, entity, data));
             try {
                 const response = yield axios_1.default.request(this.generateOptions(method, entity, data));
                 return this.parseResponse(response);
