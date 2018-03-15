@@ -32,8 +32,8 @@ export default class Client {
 
   get apiAuth() {
     return {
-        username: this.apiKey,
-        password: ''
+      username: this.apiKey,
+      password: '',
     }
   }
 
